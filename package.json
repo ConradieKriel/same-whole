@@ -1,0 +1,10 @@
+{
+  "name": "same-whole-maths-tutorial",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "A phone-first interactive tutorial on adding fractions with different denominators.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  }
+}

@@ -1,0 +1,610 @@
+{
+  "meta": {
+    "name": "Same Whole",
+    "eyebrow": "A short maths tutorial",
+    "title": "Adding fractions with different denominators",
+    "subtitle": "Make the pieces the same size before you add them.",
+    "audience": "Ages 13–16",
+    "estimatedMinutes": 8
+  },
+  "tutor": {
+    "name": "Mika",
+    "role": "Your maths guide",
+    "welcome": "We'll take this one line at a time. You do the thinking; I'll help when you need a nudge.",
+    "voiceLabel": "Read this aloud",
+    "voiceStopLabel": "Stop reading"
+  },
+  "navigation": {
+    "stages": [
+      {
+        "id": "explain",
+        "number": "01",
+        "label": "Understand",
+        "shortLabel": "Explain"
+      },
+      {
+        "id": "watch",
+        "number": "02",
+        "label": "See it done",
+        "shortLabel": "Watch"
+      },
+      {
+        "id": "together",
+        "number": "03",
+        "label": "Try it together",
+        "shortLabel": "Together"
+      },
+      {
+        "id": "independent",
+        "number": "04",
+        "label": "Your turn",
+        "shortLabel": "On your own"
+      }
+    ]
+  },
+  "explain": {
+    "heading": "Why can't we add them yet?",
+    "intro": "A denominator tells you how many equal pieces make one whole. Thirds and quarters are different-sized pieces, so adding them straight away would be like adding centimetres to inches.",
+    "visualCaption": "Same whole. Different-sized pieces.",
+    "blocks": [
+      {
+        "number": "01",
+        "heading": "Find a common denominator",
+        "body": "Look for a number both denominators divide into. The smallest one is usually easiest. It gives both fractions the same-sized pieces."
+      },
+      {
+        "number": "02",
+        "heading": "Rename each fraction",
+        "body": "Multiply the numerator and denominator by the same number. The fraction keeps its value; only the way it is written changes."
+      },
+      {
+        "number": "03",
+        "heading": "Add, then simplify",
+        "body": "Once the denominators match, add the numerators and keep the denominator. If the answer can be reduced, divide the top and bottom by the same common factor."
+      }
+    ],
+    "remember": "The denominator stays the same when you add. The numerators are the parts you add.",
+    "visualFractions": {
+      "left": {
+        "n": 1,
+        "d": 3
+      },
+      "right": {
+        "n": 1,
+        "d": 4
+      },
+      "operator": "+"
+    }
+  },
+  "workedExample": {
+    "heading": "Watch: 2/3 + 1/4",
+    "intro": "Watch the whole method. Each line appears when you're ready for it.",
+    "problem": {
+      "left": {
+        "n": 2,
+        "d": 3
+      },
+      "right": {
+        "n": 1,
+        "d": 4
+      },
+      "operator": "+"
+    },
+    "steps": [
+      {
+        "label": "Find a common denominator",
+        "math": "3 and 4 both divide into 12, so use 12.",
+        "spoken": "The smallest number that both 3 and 4 divide into is 12."
+      },
+      {
+        "label": "Rename the first fraction",
+        "math": "2/3 = (2 × 4)/(3 × 4) = 8/12",
+        "spoken": "Multiply the top and bottom by 4. Two thirds becomes eight twelfths."
+      },
+      {
+        "label": "Rename the second fraction",
+        "math": "1/4 = (1 × 3)/(4 × 3) = 3/12",
+        "spoken": "Multiply the top and bottom by 3. One quarter becomes three twelfths."
+      },
+      {
+        "label": "Add the numerators",
+        "math": "8/12 + 3/12 = 11/12",
+        "spoken": "The pieces are now the same size. Add 8 and 3, and keep the denominator 12."
+      },
+      {
+        "label": "Check whether it simplifies",
+        "math": "11/12 is already in its simplest form.",
+        "spoken": "Eleven and twelve have no common factor greater than one, so the answer is finished."
+      }
+    ],
+    "finish": "So, 2/3 + 1/4 = 11/12. The important move was making the pieces the same size first."
+  },
+  "together": {
+    "heading": "Let's do one together",
+    "intro": "This time, you enter each line. Use the fraction boxes for the top and bottom numbers. I'll check the maths, not just the final answer.",
+    "problem": {
+      "left": {
+        "n": 1,
+        "d": 2
+      },
+      "right": {
+        "n": 1,
+        "d": 6
+      },
+      "operator": "+"
+    },
+    "prompt": "Work through 1/2 + 1/6.",
+    "steps": [
+      {
+        "id": "commonDenominator",
+        "kind": "denominator",
+        "label": "1. Find a common denominator",
+        "question": "What number can both 2 and 6 divide into?",
+        "hint": "List a few multiples of 6. Which one is also a multiple of 2?",
+        "correctFeedback": "Yes. 6 works for both denominators, and it is the smallest common denominator.",
+        "largerFeedback": "That works too: both original denominators divide into it. The smallest common denominator is 6, which keeps the numbers simpler.",
+        "wrongFeedback": "Not quite. A common denominator must be divisible by both 2 and 6. Try a multiple of 6."
+      },
+      {
+        "id": "leftEquivalent",
+        "kind": "equivalent",
+        "source": "left",
+        "label": "2. Rename the first fraction",
+        "question": "Write an equivalent fraction for 1/2 using your common denominator.",
+        "hint": "Ask: 2 multiplied by what gives your common denominator? Multiply the numerator by that same number.",
+        "correctFeedback": "Exactly. You multiplied the numerator and denominator by the same number, so the value stayed the same.",
+        "wrongDenominator": "Use the common denominator you chose in the previous line. The denominator must match before the fractions can be added.",
+        "wrongNumerator": "The denominator is on track. Multiply the original numerator by the same factor you used for the denominator.",
+        "wrongFeedback": "Check that the new fraction has the same value as 1/2 and uses your chosen common denominator."
+      },
+      {
+        "id": "rightEquivalent",
+        "kind": "equivalent",
+        "source": "right",
+        "label": "3. Rename the second fraction",
+        "question": "Now write an equivalent fraction for 1/6 using the same denominator.",
+        "hint": "If 6 already matches your common denominator, does this fraction need to change at all?",
+        "correctFeedback": "Right. This fraction has been rewritten with the same denominator and still has the same value.",
+        "wrongDenominator": "Both renamed fractions need the same denominator. Use the common denominator from line 1.",
+        "wrongNumerator": "The denominator is right. Check how many times the original denominator was multiplied, then do the same to the numerator.",
+        "wrongFeedback": "Check that the new fraction has the same value as 1/6 and uses your chosen common denominator."
+      },
+      {
+        "id": "addNumerators",
+        "kind": "sum",
+        "label": "4. Add the numerators",
+        "question": "Add the two numerators. Keep the common denominator for now.",
+        "hint": "Add the numbers on top only. Do not add the denominators.",
+        "correctFeedback": "Yes. Add the numerators and keep the common denominator unchanged.",
+        "wrongFeedback": "Not quite. Add the two numerators from the previous lines. The denominator does not change when you add fractions with matching denominators."
+      },
+      {
+        "id": "simplify",
+        "kind": "finalFraction",
+        "label": "5. Simplify the answer",
+        "question": "Write the final answer in its simplest form.",
+        "hint": "Look for a number that divides evenly into both the numerator and denominator. Divide both by that same number.",
+        "equivalentNotSimplified": "That fraction has the right value, but it can still be simplified. Divide the numerator and denominator by their highest common factor.",
+        "wrongFeedback": "Check that your final fraction has the same value as the fraction you made in line 4, then see whether it is fully simplified.",
+        "correctFeedbackTemplate": "That’s it. {from} reduces to {to} because you divide the top and bottom by {factor}."
+      }
+    ],
+    "completion": "You made the pieces the same size, added the numerators, and simplified. That's the full method."
+  },
+  "independent": {
+    "heading": "Your turn",
+    "intro": "Work through one line at a time. Only the line you are answering is shown; your completed working stays visible above it. Hints are available whenever you need one.",
+    "problem": {
+      "left": {
+        "n": 2,
+        "d": 5
+      },
+      "right": {
+        "n": 1,
+        "d": 10
+      },
+      "operator": "+"
+    },
+    "steps": [
+      {
+        "id": "commonDenominator",
+        "kind": "denominator",
+        "label": "1. Find a common denominator",
+        "questionTemplate": "What number can both {leftDenominator} and {rightDenominator} divide into?",
+        "hint": "List multiples of each denominator. Look for a number that appears in both lists. The smallest common one usually keeps the working simpler.",
+        "correctFeedbackTemplate": "Correct. {value} is the smallest common denominator.",
+        "largerFeedbackTemplate": "That is a valid common denominator. {smallest} is the smallest one, so it keeps the working simpler.",
+        "wrongFeedback": "The number must be divisible by both original denominators. Try another multiple."
+      },
+      {
+        "id": "leftEquivalent",
+        "kind": "equivalent",
+        "source": "left",
+        "label": "2. Rename the first fraction",
+        "questionTemplate": "Write {leftFraction} as an equivalent fraction using your common denominator.",
+        "hint": "Find the multiplier that takes the original denominator to your common denominator. Multiply the numerator by that same amount.",
+        "correctFeedbackTemplate": "Correct. {fraction} has the same value as {original}.",
+        "wrongDenominator": "Use the common denominator you chose in line 1.",
+        "wrongNumerator": "Multiply the numerator by the same factor you used for the denominator.",
+        "wrongFeedback": "Check that the fraction keeps the same value and uses your common denominator."
+      },
+      {
+        "id": "rightEquivalent",
+        "kind": "equivalent",
+        "source": "right",
+        "label": "3. Rename the second fraction",
+        "questionTemplate": "Now write {rightFraction} using the same denominator.",
+        "hint": "Compare the second denominator with your common denominator. If they already match, the numerator may not need to change.",
+        "correctFeedbackTemplate": "Correct. {fraction} has the same value as {original}.",
+        "wrongDenominator": "Both renamed fractions must use the common denominator from line 1.",
+        "wrongNumerator": "Multiply the numerator by the same factor you used for the denominator.",
+        "wrongFeedback": "Check that the fraction keeps the same value and uses your common denominator."
+      },
+      {
+        "id": "addNumerators",
+        "kind": "sum",
+        "label": "4. Add the numerators",
+        "questionTemplate": "Add the two numerators. Keep the common denominator unchanged.",
+        "hint": "Add the numbers on top only. The denominator stays the same because the pieces are now equal in size.",
+        "correctFeedbackTemplate": "Yes. {left} + {right} = {sum}. Keep the denominator {denominator}.",
+        "wrongFeedback": "Add the two numerators only. Keep the denominator unchanged."
+      },
+      {
+        "id": "simplify",
+        "kind": "finalFraction",
+        "label": "5. Simplify the answer",
+        "questionTemplate": "Write your result as a fraction in its simplest form.",
+        "hint": "Look for the greatest number that divides evenly into both the numerator and denominator. Divide both by it.",
+        "correctFeedbackTemplate": "Correct. {fraction} is the simplified result.",
+        "equivalentNotSimplified": "The value is right, but it is not in its simplest form. Divide the numerator and denominator by a common factor.",
+        "wrongFeedback": "Check that your final fraction has the same value as the sum from line 4."
+      }
+    ],
+    "completion": "You completed every line. The numbers changed, but the method stayed the same: find a common denominator, rename both fractions, add, then simplify.",
+    "promptTemplate": "Work through {left} + {right}, one line at a time.",
+    "lineCounterTemplate": "YOUR WORK / LINE {current} OF {total}",
+    "previousWorkLabel": "Your completed working",
+    "newQuestionLabel": "New question",
+    "newQuestionNote": "The worked example and guided practice stay the same. Only this practice question changes.",
+    "newQuestionTutor": "A new question, same method. Start by finding a number both denominators divide into.",
+    "questionBank": [
+      {
+        "id": "practice-01",
+        "problem": {
+          "left": {
+            "n": 3,
+            "d": 4
+          },
+          "right": {
+            "n": 1,
+            "d": 6
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-02",
+        "problem": {
+          "left": {
+            "n": 1,
+            "d": 3
+          },
+          "right": {
+            "n": 1,
+            "d": 5
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-03",
+        "problem": {
+          "left": {
+            "n": 2,
+            "d": 7
+          },
+          "right": {
+            "n": 1,
+            "d": 14
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-04",
+        "problem": {
+          "left": {
+            "n": 3,
+            "d": 8
+          },
+          "right": {
+            "n": 1,
+            "d": 4
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-05",
+        "problem": {
+          "left": {
+            "n": 1,
+            "d": 6
+          },
+          "right": {
+            "n": 1,
+            "d": 4
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-06",
+        "problem": {
+          "left": {
+            "n": 2,
+            "d": 9
+          },
+          "right": {
+            "n": 1,
+            "d": 6
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-07",
+        "problem": {
+          "left": {
+            "n": 3,
+            "d": 10
+          },
+          "right": {
+            "n": 1,
+            "d": 5
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-08",
+        "problem": {
+          "left": {
+            "n": 2,
+            "d": 5
+          },
+          "right": {
+            "n": 1,
+            "d": 3
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-09",
+        "problem": {
+          "left": {
+            "n": 3,
+            "d": 7
+          },
+          "right": {
+            "n": 2,
+            "d": 5
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-10",
+        "problem": {
+          "left": {
+            "n": 1,
+            "d": 4
+          },
+          "right": {
+            "n": 1,
+            "d": 12
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-11",
+        "problem": {
+          "left": {
+            "n": 5,
+            "d": 12
+          },
+          "right": {
+            "n": 1,
+            "d": 8
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-12",
+        "problem": {
+          "left": {
+            "n": 2,
+            "d": 9
+          },
+          "right": {
+            "n": 1,
+            "d": 3
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-13",
+        "problem": {
+          "left": {
+            "n": 3,
+            "d": 5
+          },
+          "right": {
+            "n": 1,
+            "d": 4
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-14",
+        "problem": {
+          "left": {
+            "n": 2,
+            "d": 3
+          },
+          "right": {
+            "n": 1,
+            "d": 8
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-15",
+        "problem": {
+          "left": {
+            "n": 5,
+            "d": 8
+          },
+          "right": {
+            "n": 1,
+            "d": 4
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-16",
+        "problem": {
+          "left": {
+            "n": 3,
+            "d": 4
+          },
+          "right": {
+            "n": 1,
+            "d": 8
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-17",
+        "problem": {
+          "left": {
+            "n": 1,
+            "d": 2
+          },
+          "right": {
+            "n": 1,
+            "d": 5
+          },
+          "operator": "+"
+        }
+      },
+      {
+        "id": "practice-18",
+        "problem": {
+          "left": {
+            "n": 2,
+            "d": 11
+          },
+          "right": {
+            "n": 1,
+            "d": 3
+          },
+          "operator": "+"
+        }
+      }
+    ]
+  },
+  "answerRules": {
+    "commonDenominator": "Any positive common multiple of both denominators is accepted, up to 10,000.",
+    "equivalentFractions": "The learner must enter an equivalent fraction and use the common denominator selected in the first line.",
+    "addition": "The learner must add the converted numerators and keep the shared denominator.",
+    "finalFraction": "Any mathematically equivalent fraction in lowest terms is accepted."
+  },
+  "ui": {
+    "feedbackCorrectTitle": "That line works.",
+    "feedbackTryAgainTitle": "Try that line again.",
+    "missingWholeNumber": "Enter a positive whole number for the common denominator.",
+    "invalidWholeNumber": "Enter a positive whole number no larger than 10,000.",
+    "missingFraction": "Enter both the numerator and denominator as positive whole numbers.",
+    "missingFractionParts": "Enter both parts of your final fraction.",
+    "missingNumeratorSum": "Enter the sum of the two numerators.",
+    "hintButton": "Need a hint?",
+    "hideHintButton": "Hide hint",
+    "voiceUnavailable": "Voice unavailable",
+    "lessonLoadHeading": "We couldn't open the lesson.",
+    "lessonLoadKicker": "LESSON NOT AVAILABLE",
+    "lessonLoadHelp": "Check that lesson-content.json is in the same folder as this page.",
+    "commonDenominatorMissing": "Enter a positive whole number for the common denominator.",
+    "commonDenominatorOutOfRange": "Enter a positive whole number no larger than 10,000.",
+    "equivalentFractionMissing": "Enter both the numerator and denominator as positive whole numbers.",
+    "finalFractionMissing": "Enter both parts of your final fraction.",
+    "sumMissing": "Enter the sum of the two numerators.",
+    "commonDenominatorBlocked": "Fix the common denominator first. The later lines depend on it.",
+    "equivalentFractionBlocked": "Fix the equivalent fractions above before adding.",
+    "commonDenominatorHintFallback": "The number must be divisible by both original denominators.",
+    "equivalentFractionHintFallback": "Multiply the numerator and denominator by the same factor.",
+    "additionHintFallback": "Add the two numerators only. Keep the denominator unchanged.",
+    "finalFractionHintFallback": "Check the value of the fraction, then simplify if possible.",
+    "notSimplifiedFallback": "The value is right, but it is not in its simplest form. Divide the top and bottom by a common factor.",
+    "needHint": "Need a hint?",
+    "hideHint": "Hide hint",
+    "lessonFileHelp": "Check that lesson-content.json is in the same folder as this page.",
+    "workedNext": "Next line →",
+    "workedFinish": "Finish example",
+    "workedPrevious": "← Previous line",
+    "continue": "Continue →",
+    "tryTogether": "Try one together →",
+    "tryAlone": "Have a go on your own →",
+    "review": "Review the lesson ↺",
+    "finishFirst": "Finish the working first",
+    "partStartNote": "Start with the idea, not a formula.",
+    "workedCompleteNote": "You have seen the full method.",
+    "workedContinueNote": "Watch each line before moving on.",
+    "togetherCompleteNote": "You worked through every line.",
+    "togetherContinueNote": "Check each line as you go.",
+    "independentCompleteNote": "You have completed the tutorial.",
+    "independentContinueNote": "Take your time. Hints are available.",
+    "largerDenominatorTemplate": "That is a valid common denominator. The smallest is {smallest}, which keeps the working simpler.",
+    "independentCommonCorrect": "Correct. {value} is a common denominator for both fractions.",
+    "independentEquivalentCorrect": "{fraction} has the same value as {original} and uses the common denominator.",
+    "independentEquivalentMissing": "Enter both the numerator and denominator.",
+    "independentEquivalentDenominator": "Use the common denominator from line 1.",
+    "independentEquivalentNumerator": "Multiply the numerator by the same factor you used for the denominator.",
+    "independentEquivalentBlocked": "Fix the common denominator first. The later lines depend on it.",
+    "independentAddCorrect": "Yes. {left} + {right} = {sum}. Keep the denominator {denominator}.",
+    "independentAddBlocked": "Fix the equivalent fractions above before adding.",
+    "independentAddWrong": "Add the two numerators only. Keep the denominator unchanged.",
+    "independentFinalCheck": "Check the final fraction against your sum, then simplify if possible.",
+    "independentFinalCorrect": "Correct. {fraction} is the simplified result.",
+    "independentFinalBlocked": "Complete the earlier lines first.",
+    "independentSummarySuccess": "You got there.",
+    "independentSummaryRetry": "A few lines need another look.",
+    "independentSummaryRetryHelp": "Read the feedback under each line, adjust your working, and check it again. You can open any hint whenever you need one.",
+    "independentCheckButton": "Check my working",
+    "completedLinePrefix": "Correct line",
+    "togetherCompletedHeading": "You've worked it through.",
+    "togetherHintBeforeAdd": "Add the two numerators only. Keep the denominator unchanged.",
+    "previousLine": "← Previous line",
+    "previousLineMessage": "Let's look at the previous line again. Check it before moving forward.",
+    "yourFraction": "Your fraction",
+    "commonDenominatorLabel": "Common denominator",
+    "checkThisLine": "Check this line",
+    "numeratorAria": "Numerator",
+    "denominatorAria": "Denominator",
+    "commonDenominatorAria": "Common denominator",
+    "sumNumeratorAria": "Sum of the numerators",
+    "fractionEntryAria": "Enter numerator and denominator",
+    "topPlaceholder": "top",
+    "bottomPlaceholder": "bottom",
+    "reviewLastLine": "← Review last line",
+    "reviewLastWorkedLine": "← Review the last worked line"
+  }
+}

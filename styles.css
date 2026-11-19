@@ -1,0 +1,264 @@
+:root {
+  color-scheme: light;
+  --paper: #f3f0e8;
+  --paper-deep: #eae5da;
+  --white: #fbfaf6;
+  --ink: #262b27;
+  --ink-soft: #555c54;
+  --muted: #696e65;
+  --line: #d9d3c7;
+  --green: #53634f;
+  --green-dark: #3f4c3c;
+  --rust: #a65339;
+  --rust-pale: #f1e3dc;
+  --good: #356247;
+  --good-pale: #e4eee7;
+  --bad: #913f31;
+  --bad-pale: #f5e6e1;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: 'Aptos', 'Segoe UI', system-ui, sans-serif;
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--paper); }
+button, input { font: inherit; }
+button { color: inherit; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid #a65339; outline-offset: 3px; }
+
+.masthead {
+  min-height: 76px;
+  padding: 0 clamp(20px, 5vw, 74px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+.wordmark { display: inline-flex; gap: 11px; align-items: center; text-decoration: none; }
+.wordmark-mark { font-family: var(--serif); font-size: 29px; line-height: 1; color: var(--rust); letter-spacing: -3px; }
+.wordmark-name { font-size: 11px; font-weight: 800; letter-spacing: .17em; }
+.masthead-note { margin: 0; color: var(--muted); font-size: 12px; letter-spacing: .02em; }
+
+.layout {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 47px 0 65px;
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: clamp(38px, 7vw, 96px);
+  align-items: start;
+}
+.side-rail { position: sticky; top: 24px; }
+.rail-kicker, .tutor-overline, .lesson-topline, .step-kicker {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  color: var(--muted);
+}
+.rail-kicker { margin: 5px 0 17px; }
+.stage-nav { display: grid; gap: 4px; }
+.stage-link {
+  width: 100%; min-height: 44px; padding: 0 11px;
+  display: flex; align-items: center; gap: 13px;
+  text-align: left; border: 0; border-left: 2px solid transparent;
+  background: transparent; color: #777b70; cursor: pointer;
+  font-size: 13px; transition: background .16s ease, color .16s ease;
+}
+.stage-link span:first-child { font-family: var(--serif); font-size: 14px; color: #96978d; }
+.stage-link:hover { background: #ebe7dc; color: var(--ink); }
+.stage-link.is-active { background: #e7e5d9; border-left-color: var(--rust); color: var(--ink); font-weight: 700; }
+.stage-link.is-active span:first-child { color: var(--rust); }
+.stage-link.is-complete span:first-child { color: var(--good); }
+.rail-rule { height: 1px; background: var(--line); margin: 27px 0 23px; }
+.tutor-note { padding: 0 3px; }
+.tutor-heading { display: flex; align-items: center; gap: 12px; }
+.tutor-portrait { width: 58px; height: 58px; flex: 0 0 auto; }
+.tutor-overline { margin: 0 0 3px; font-size: 9px; }
+.tutor-heading h2 { margin: 0; font-family: var(--serif); font-size: 23px; font-weight: 500; }
+.tutor-copy { max-width: 220px; margin: 13px 0 10px; color: var(--ink-soft); font-size: 12px; line-height: 1.65; }
+.tutor-tools { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.text-button { padding: 3px 0; border: 0; border-bottom: 1px solid #aaa99b; background: transparent; color: var(--green-dark); cursor: pointer; font-size: 11px; font-weight: 700; }
+.text-button:hover { color: var(--rust); border-color: var(--rust); }
+.stop-speech { color: var(--rust); }
+.rail-footnote { margin: 28px 0 0; color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 13px; }
+
+.lesson-area { min-width: 0; }
+.lesson-topline { display: flex; justify-content: space-between; align-items: center; margin: 5px 0 10px; }
+.lesson-topline span:last-child { color: var(--rust); }
+.progress-track { height: 3px; background: #e1dccf; width: 100%; overflow: hidden; }
+.progress-track span { display: block; height: 100%; width: 25%; background: var(--rust); transition: width .25s ease; }
+.lesson-content { padding: 37px 0 20px; min-height: 540px; }
+.lesson-content:focus { outline: none; }
+.kicker { margin: 0 0 11px; color: var(--rust); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+h1, h2, h3, p { overflow-wrap: break-word; }
+h1 { max-width: 700px; margin: 0; font-family: var(--serif); font-size: clamp(36px, 5vw, 57px); font-weight: 500; line-height: 1.04; letter-spacing: -.035em; }
+.lede { max-width: 650px; margin: 17px 0 29px; color: var(--ink-soft); font-size: 16px; line-height: 1.65; }
+.explain-intro { max-width: 690px; color: var(--ink-soft); line-height: 1.75; font-size: 15px; }
+
+.fraction-visual {
+  margin: 27px 0 33px; padding: 22px 24px 19px;
+  background: #ebe6d9; border-left: 3px solid var(--green);
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.visual-equation { display: flex; align-items: center; gap: clamp(13px, 3vw, 27px); }
+.fraction { min-width: 32px; display: inline-grid; grid-template-rows: auto 2px auto; justify-items: center; vertical-align: middle; font-family: var(--serif); font-size: 24px; line-height: 1.18; font-variant-numeric: lining-nums; }
+.fraction .bar { width: 100%; min-width: 25px; height: 1.5px; background: currentColor; }
+.fraction.large { min-width: 46px; font-size: 31px; }
+.fraction.small { min-width: 26px; font-size: 18px; }
+.operator { font-family: var(--serif); font-size: 28px; color: var(--rust); }
+.visual-caption { max-width: 155px; color: var(--muted); font-size: 11px; line-height: 1.5; text-align: right; }
+.explain-list { border-top: 1px solid var(--line); }
+.explain-row { display: grid; grid-template-columns: 40px minmax(0,1fr); gap: 13px; padding: 19px 0; border-bottom: 1px solid var(--line); }
+.explain-number { padding-top: 2px; font-family: var(--serif); color: var(--rust); font-size: 18px; }
+.explain-row h2 { margin: 0 0 6px; font-family: var(--serif); font-size: 22px; font-weight: 500; }
+.explain-row p { max-width: 650px; margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.7; }
+.remember-note { margin: 24px 0 4px; padding: 14px 17px; background: var(--green); color: #fffdf6; font-family: var(--serif); font-size: 17px; line-height: 1.5; }
+
+.example-problem { display: inline-flex; align-items: center; gap: 16px; padding: 13px 18px; background: #e9e4d7; margin: 4px 0 23px; }
+.example-problem .fraction { font-size: 27px; }
+.example-problem .operator { font-size: 24px; }
+.worked-panel { max-width: 740px; }
+.worked-step { min-height: 165px; padding: 22px 23px; background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--green); }
+.worked-step .step-kicker { margin: 0 0 8px; }
+.worked-step h2 { margin: 0 0 13px; font-family: var(--serif); font-size: 22px; font-weight: 500; }
+.math-line { margin: 0; color: var(--ink); font-family: var(--serif); font-size: clamp(22px, 3.3vw, 30px); line-height: 1.45; }
+.worked-explanation { margin: 15px 0 0; color: var(--ink-soft); line-height: 1.65; font-size: 14px; }
+.worked-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 13px 0 0; }
+.step-position { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.worked-finish { padding: 14px 17px; margin-top: 15px; background: var(--good-pale); color: var(--good); line-height: 1.6; font-size: 14px; }
+
+.practice-heading { margin-bottom: 22px; }
+.practice-heading h1 { font-size: clamp(33px, 4.5vw, 48px); }
+.practice-heading .lede { margin-bottom: 19px; }
+.problem-strip { display: inline-flex; align-items: center; gap: 17px; padding: 12px 17px; margin-bottom: 20px; background: #e9e4d7; }
+.problem-strip .fraction { font-size: 27px; }
+.problem-strip .operator { font-size: 23px; }
+.work-form { max-width: 760px; }
+.step-form-row { padding: 17px 0 19px; border-top: 1px solid var(--line); }
+.step-form-row:last-of-type { border-bottom: 1px solid var(--line); }
+.step-form-row h2 { margin: 0 0 5px; font-family: var(--serif); font-size: 20px; font-weight: 500; }
+.step-question { margin: 0 0 13px; color: var(--ink-soft); font-size: 13px; line-height: 1.55; }
+.entry-line { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.entry-prefix { color: var(--muted); font-size: 12px; }
+.number-input { width: 82px; height: 43px; padding: 7px 10px; border: 1px solid #bbb6a9; border-radius: 0; background: var(--white); color: var(--ink); text-align: center; font-family: var(--serif); font-size: 21px; font-variant-numeric: tabular-nums; }
+.number-input:focus { border-color: var(--green); outline: 2px solid #8a9a83; outline-offset: 1px; }
+.number-input[aria-invalid="true"] { border-color: var(--bad); background: #fff9f7; }
+.fraction-entry { display: inline-grid; grid-template-rows: 39px 2px 39px; gap: 3px; align-items: center; justify-items: center; }
+.fraction-entry .number-input { width: 75px; height: 39px; font-size: 19px; }
+.fraction-entry .entry-bar { width: 100%; height: 2px; background: var(--ink); }
+.fraction-separator { margin: 0 1px; color: var(--muted); font-size: 13px; }
+.fixed-denominator { min-width: 75px; text-align: center; font-family: var(--serif); font-size: 21px; }
+.step-actions { display: flex; align-items: center; gap: 13px; margin-top: 11px; flex-wrap: wrap; }
+.hint-button { padding: 4px 0; border: 0; border-bottom: 1px dotted #8a8c7e; background: transparent; color: var(--green-dark); cursor: pointer; font-size: 11px; font-weight: 700; }
+.hint-button:hover { color: var(--rust); }
+.hint-box { max-width: 570px; margin-top: 11px; padding: 11px 13px; border-left: 2px solid var(--rust); background: #eee8dd; color: var(--ink-soft); font-size: 12px; line-height: 1.6; }
+.feedback { margin-top: 12px; padding: 11px 13px; border-left: 3px solid var(--good); background: var(--good-pale); color: #284d37; font-size: 13px; line-height: 1.55; }
+.feedback.is-error { border-left-color: var(--bad); background: var(--bad-pale); color: #753326; }
+.feedback strong { display: block; margin-bottom: 3px; }
+.practice-submit { margin-top: 20px; }
+.practice-summary { max-width: 760px; margin-top: 16px; padding: 16px 18px; border-left: 3px solid var(--good); background: var(--good-pale); color: #284d37; }
+.practice-summary h2 { margin: 0 0 5px; font-family: var(--serif); font-weight: 500; font-size: 23px; }
+.practice-summary p { margin: 0; font-size: 13px; line-height: 1.65; }
+.practice-summary.is-incomplete { border-left-color: var(--rust); background: #f0e9dd; color: #5f4a37; }
+
+.button { min-height: 44px; padding: 0 17px; border: 1px solid transparent; border-radius: 0; cursor: pointer; font-size: 12px; font-weight: 750; transition: background .15s ease, border-color .15s ease; }
+.button-primary { background: var(--green); color: #fffdf7; }
+.button-primary:hover { background: var(--green-dark); }
+.button-quiet { background: transparent; border-color: #c8c1b4; color: var(--ink-soft); }
+.button-quiet:hover:not(:disabled) { background: #e8e3d8; }
+.button:disabled { opacity: .38; cursor: not-allowed; }
+.button-small { min-height: 36px; padding: 0 13px; }
+.lesson-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 17px; border-top: 1px solid var(--line); }
+.control-note { color: var(--muted); font-family: var(--serif); font-size: 13px; font-style: italic; text-align: center; }
+.site-footer { display: flex; justify-content: space-between; width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 17px 0 25px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; letter-spacing: .04em; }
+.noscript { margin: 25px; padding: 15px; background: var(--bad-pale); color: var(--bad); }
+
+@media (min-width: 1200px) {
+  .lesson-content { padding-top: 45px; }
+}
+@media (max-width: 760px) {
+  .masthead { min-height: 64px; padding: 0 19px; }
+  .masthead-note { font-size: 10px; }
+  .layout { width: min(100% - 36px, 620px); display: block; padding: 22px 0 42px; }
+  .side-rail { position: static; }
+  .rail-kicker, .rail-rule, .tutor-note, .rail-footnote { display: none; }
+  .stage-nav { display: flex; gap: 0; overflow-x: auto; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+  .stage-nav::-webkit-scrollbar { display: none; }
+  .stage-link { min-width: max-content; min-height: 44px; padding: 0 12px; gap: 7px; border-left: 0; border-bottom: 2px solid transparent; font-size: 11px; }
+  .stage-link span:first-child { font-size: 12px; }
+  .stage-link.is-active { border-bottom-color: var(--rust); background: transparent; }
+  .lesson-content { padding: 27px 0 20px; min-height: 0; }
+  .lesson-topline { font-size: 9px; }
+  .lede { font-size: 14px; margin: 13px 0 23px; }
+  .explain-intro { font-size: 14px; }
+  .fraction-visual { margin: 22px 0 24px; padding: 17px 14px; }
+  .visual-caption { max-width: 110px; font-size: 10px; }
+  .fraction.large { font-size: 26px; min-width: 38px; }
+  .visual-equation { gap: 12px; }
+  .explain-row { grid-template-columns: 30px minmax(0,1fr); gap: 8px; padding: 16px 0; }
+  .explain-row h2 { font-size: 20px; }
+  .explain-row p { font-size: 13px; }
+  .remember-note { font-size: 16px; }
+  .worked-step { padding: 18px 15px; min-height: 150px; }
+  .worked-step h2 { font-size: 20px; }
+  .worked-explanation { font-size: 13px; }
+  .worked-controls { align-items: stretch; }
+  .step-form-row { padding: 15px 0 17px; }
+  .step-form-row h2 { font-size: 19px; }
+  .step-question { font-size: 12px; }
+  .number-input { width: 76px; }
+  .lesson-controls { position: sticky; bottom: 0; margin: 17px -18px -42px; padding: 12px 18px max(12px, env(safe-area-inset-bottom)); background: rgba(243,240,232,.97); backdrop-filter: blur(7px); }
+  .control-note { display: none; }
+  .site-footer { width: calc(100% - 36px); }
+}
+@media (max-width: 380px) {
+  .masthead-note { max-width: 118px; text-align: right; line-height: 1.35; }
+  .wordmark-name { font-size: 10px; }
+  .visual-caption { display: none; }
+  .visual-equation { margin: 0 auto; }
+  .lesson-controls .button { padding: 0 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+.completed-lines { max-width: 760px; }
+.completed-line { display: flex; align-items: baseline; gap: 10px; padding: 8px 0; border-bottom: 1px solid #ddd7ca; color: var(--muted); font-size: 12px; }
+.completed-line strong { margin-left: auto; color: var(--ink-soft); font-family: var(--serif); font-size: 15px; font-weight: 500; }
+.completed-mark { color: var(--good); font-size: 13px; font-weight: 800; }
+.current-step { padding-top: 19px; }
+
+@media (max-width: 760px) {
+  .tutor-note { display: block; margin: 13px 0 4px; padding: 10px 12px; background: #ebe6d9; }
+  .tutor-portrait { width: 39px; height: 39px; }
+  .tutor-heading h2 { font-size: 19px; }
+  .tutor-overline { font-size: 8px; }
+  .tutor-copy { max-width: none; margin: 7px 0 6px; font-size: 11px; line-height: 1.5; }
+  .tutor-tools { gap: 12px; }
+  .rail-footnote { display: none; }
+}
+/* Keep interactive targets comfortable for touch use. */
+.button-small { min-height: 44px; }
+.text-button, .hint-button { min-height: 44px; padding-top: 7px; padding-bottom: 7px; }
+.number-input { min-height: 44px; }
+.fraction-entry { grid-template-rows: 44px 2px 44px; }
+.fraction-entry .number-input { height: 44px; }
+
+
+/* Independent practice reveals one line at a time. */
+.current-step {
+  margin-top: 14px;
+  padding: 20px 0 22px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.current-step .step-kicker { margin-bottom: 10px; }
+.current-step .step-question { max-width: 620px; }
+.completed-lines:empty { display: none; }
+.completed-lines:not(:empty) { margin: 16px 0 20px; }
+.new-question-note { margin: 12px 0 0 !important; color: var(--ink-soft); font-size: 12px; }
+#new-independent-question { margin-top: 16px; }
+#independent-step-feedback:empty { display: none; }
