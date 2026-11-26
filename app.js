@@ -1,4 +1,5 @@
 import { lcm, positiveInteger, isEquivalent, isCommonDenominator, isEquivalentWithDenominator, isSimplestEquivalent, pickRandomQuestion } from './math-logic.js';
+import { chooseFemaleEnglishVoice } from './speech-voice.js';
 
 const contentUrl = './lesson-content.json';
 
@@ -18,6 +19,17 @@ const state = {
   independentQuestionId: 'starter',
   activeTutorText: '',
 };
+
+let tutorVoice = null;
+
+function refreshTutorVoice() {
+  tutorVoice = chooseFemaleEnglishVoice(window.speechSynthesis.getVoices());
+}
+
+if ('speechSynthesis' in window) {
+  refreshTutorVoice();
+  window.speechSynthesis.addEventListener('voiceschanged', refreshTutorVoice);
+}
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -58,10 +70,14 @@ function setTutorText(message) {
 function speakCurrentText() {
   if (!('speechSynthesis' in window)) return;
   window.speechSynthesis.cancel();
+  refreshTutorVoice();
+
   const utterance = new SpeechSynthesisUtterance(state.activeTutorText || state.lesson.tutor.welcome);
-  utterance.rate = 0.96;
-  utterance.pitch = 1;
-  utterance.lang = 'en-ZA';
+  utterance.rate = 0.93;
+  utterance.pitch = 1.04;
+  utterance.lang = tutorVoice?.lang || 'en-ZA';
+  if (tutorVoice) utterance.voice = tutorVoice;
+
   utterance.onstart = () => { $('#speak-button').setAttribute('aria-pressed', 'true'); $('#stop-speech').hidden = false; };
   utterance.onend = () => { $('#speak-button').setAttribute('aria-pressed', 'false'); $('#stop-speech').hidden = true; };
   utterance.onerror = () => { $('#speak-button').setAttribute('aria-pressed', 'false'); $('#stop-speech').hidden = true; };
